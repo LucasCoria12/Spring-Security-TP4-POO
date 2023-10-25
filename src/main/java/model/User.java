@@ -7,12 +7,18 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class User implements UserDetails{
+public class User implements UserDetails {
     private String password;
     private String username;
 
+    public User() {
+    }
 
-    public void setPassword(String password){
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -50,5 +56,5 @@ public class User implements UserDetails{
     public boolean isEnabled() {
         return true;
     }
-    
+
 }
